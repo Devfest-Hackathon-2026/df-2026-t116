@@ -4,11 +4,9 @@
 
 **話は人が書き、絵は AI が描く。みんなで1ページずつ続ける連載漫画の Web アプリ。**
 
-<!-- デモ動画の URL が決まったら、下の「デモ動画（準備中）」をリンクに差し替える（提出用 Drive の動画、または YouTube の限定公開） -->
-[本番で開く](https://devfest-4koma--project-bd07690e-65d2-4420-910.asia-east1.hosted.app) ・ デモ動画（準備中） ・ [構成](#仕組みとアーキテクチャ) ・ [手元で動かす](#手元で動かすgcp-なし)
+[本番で開く](https://devfest-4koma--project-bd07690e-65d2-4420-910.asia-east1.hosted.app) ・ [構成](#仕組みとアーキテクチャ)
 
 DevFest GDGoC Japan Hackathon 2026 ／ チーム 赤味噌レンジャー（[@H4aruki](https://github.com/H4aruki)・[@Maaa2005](https://github.com/Maaa2005)）
-<!-- カテゴリ（エンタメ／クリエイティブのどちらか）が決まったらここに書く -->
 
 <br>
 
@@ -63,7 +61,7 @@ DevFest GDGoC Japan Hackathon 2026 ／ チーム 赤味噌レンジャー（[@H4
 | 2c 安全性・拡張性・保守性 | [安全と費用の守り](#安全と費用の守り)、[保守の仕組み](#保守の仕組み) | `firestore.rules`、`storage.rules`、[ADR 0010](docs/decisions/0010-gcp-billing-guards.md)、[ADR 0012](docs/decisions/0012-generation-limits.md) |
 | 3a 課題が具体的かつ明確か | [解決する課題](#解決する課題) | [アイデアシート](docs/ideation-sheet-d-4koma.md) |
 | 3b 機能や仕組みが課題解決に有効か | [話は人、絵は AI](#話は人絵は-ai) | [ADR 0009](docs/decisions/0009-human-story-ai-art.md) |
-| 4a ピッチの構成と説明力 | デモ動画（準備中） | 提出用 Drive |
+| 4a ピッチの構成と説明力 | プレゼンスライド | 提出用 Drive |
 
 ## 解決する課題
 
@@ -200,18 +198,6 @@ Vertex AI は `@google/genai` SDK を、実行サービスアカウントの ADC
 - 部品を環境変数で差し替えられます。`DATA_BACKEND`（memory / firestore）と `GENERATOR`（fake / vertex）を切り替えるだけで、GCP なしに手元で全画面が動き、テストも GCP に触れません（`src/lib/server.ts`）。
 - 判断はすべて ADR に残しています。背景、比べた案、採らなかった理由、未決の点まで書いています（[docs/decisions/](docs/decisions/README.md)）。
 - main は CI（型検査・vitest・build・規約・gitleaks）と git hooks で守っています。
-
-## 手元で動かす（GCP なし）
-
-Node.js 22 以上が必要です。既定では、データはメモリ、絵は AI を呼ばない仮の生成器です。
-
-```sh
-npm ci
-npm run dev      # http://localhost:3000
-npm test         # vitest
-```
-
-ログインの代わりに、画面右上の「手元の名前」で利用者を切り替えられます（memory のときだけ有効）。Vertex AI と Firestore につなぐ設定は [.env.example](.env.example) と [docs/11](docs/11-gcp-deploy.md) を見てください。
 
 ## 今の状態と、これから
 
