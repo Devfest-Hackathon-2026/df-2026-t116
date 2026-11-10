@@ -1,8 +1,8 @@
 # 0017 README を審査員向けに作り直す
 
-- 状態: 案（PR #74 の上で Haruki さんが確認する）
+- 状態: 案（PR #74 の上で @H4aruki が確認する）
 - 日付: 2026-11-10 13:00 JST ごろ
-- 決定者: 方針は Haruki さん（12:11 JST「README結構重要なものになってくるからデザインも意識してね」、12:15 JST「14:00 までに PR」）。構成と文面は Miso（Haruki さんの AI）が起案
+- 決定者: 方針は @H4aruki（2026-11-10: README は審査で重要なのでデザインも意識する。14:00 までに PR を出す）。構成と文面は Miso（@H4aruki の AI）が起案
 - 関連: Issue #71、[0001](0001-submission-transfer.md)（提出用リポへの移し方）、[0002](0002-tech-stack.md)、[0009](0009-human-story-ai-art.md)
 
 ## 背景
@@ -41,9 +41,9 @@
 ## 理由（判断基準）
 
 - 審査項目に直接答えること（案A）。
-- 主張を確かめられること: 「審査員は README を信じない」前提で、主張ごとにコードか ADR を示す（X の投稿、research.md）。
-- 冒頭で「何の問題を解くか」「試し方」「デモ動画」が分かること（X の投稿、research.md）。
-- 機械にも読みやすいこと: 審査の一部を AI がする大会が出てきている。表と見出し中心にし、画像には説明の alt を付ける（X の投稿、research.md）。
+- 主張を確かめられること: 「審査員は README を信じない」前提で、主張ごとにコードか ADR を示す（X 上の投稿の調査）。
+- 冒頭で「何の問題を解くか」「試し方」「デモ動画」が分かること（X 上の投稿の調査）。
+- 機械にも読みやすいこと: 審査の一部を AI がする大会が出てきている。表と見出し中心にし、画像には説明の alt を付ける（X 上の投稿の調査）。
 - 事実を作らないこと: 数字は apphosting.yaml・コード・ADR にあるものだけ。spend cap の金額や予算額は README に書かない（公開リポで必要がない）。
 
 ## 却下した案と理由
@@ -51,7 +51,7 @@
 | 案 | 採らなかった理由 |
 |---|---|
 | shields.io などのバッジを並べる | 外部の画像サーバーに依存する。審査項目に効く情報が無い。技術は表で示す |
-| 絵文字の見出し・装飾 | AI っぽく見える（Haruki さんの関心、profile.md）。GitHub の Alerts も1〜2個に抑える（GitHub Docs） |
+| 絵文字の見出し・装飾 | AI っぽく見える（@H4aruki の関心）。GitHub の Alerts も1〜2個に抑える（GitHub Docs） |
 | 動く図（JS で動くアーキテクチャ図） | GitHub の README では JS が動かない |
 | 仮の画像（それらしく作った画面や絵） | 偽装と取られるおそれ（キックオフ p.46「デモ動画の偽装」は対象外）。撮れない画像は差し替え場所を HTML コメントで示す |
 | 本番画面のスクリーンショット | 12:30 JST 時点で本番に作品が0件（`/api/themes` が空）で、空の画面しか撮れない。生成を走らせると課金されるので撮影のために作らない |
@@ -77,7 +77,6 @@
 
 ## 出典
 
-- Haruki さん 2026-11-10 12:11・12:15 JST の指示
+- @H4aruki の指示（2026-11-10）
 - キックオフ資料 p.37・p.42・p.43・p.46・p.48（`devfest-hackathon-2026/docs/kickoff-slide-latest.md`）
 - 前提メモ追記 2026-11-05 10:58（提出用リポ）
-- 調査メモ（box の `/workspace/readme-work/research.md`。リポには入れない）。主な出典: https://x.com/Karuzipofficial/status/2111623552692859252 、https://x.com/GOROman/status/2109389979663425923 、https://x.com/niket_tsx/status/2118971632811446422 、https://x.com/prasanth_kuna/status/2118640326181290162 、https://x.com/luinlee/status/2113085361836744764 、GitHub Docs「Basic writing and formatting syntax」（picture 要素、Alerts）

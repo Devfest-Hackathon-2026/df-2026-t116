@@ -2,19 +2,19 @@
 
 - 状態: 決定（「人が手で作業するときも同じ宣言を求めるか」は未決）
 - 日付: 2026-11-10（問題提起 11:07 JST、案の承認と引き取り条件の決定 11:18 JST）
-- 決定者: Haruki さん。ルール案・gh の手順・本 ADR の文面は Miso（Haruki さんの AI）が起案
-- 関連: #69、[0014 開発の進め方](0014-dev-workflow.md)、[docs/14-kanban.md](../14-kanban.md)、看板 <https://github.com/orgs/akamiso-rangers/projects/1>
+- 決定者: @H4aruki。ルール案・gh の手順・本 ADR の文面は Miso（@H4aruki の AI）が起案
+- 関連: #69、[0014 開発の進め方](0014-dev-workflow.md)、[docs/14-kanban.md](../14-kanban.md)、看板（開発用リポジトリの GitHub Projects、非公開）
 
 ## 背景
 
-- このリポジトリは2つの GitHub アカウントから触られている。H4aruki（Haruki さん本人と、Haruki さんの AI の Miso、その下の Claude Code／Codex）と、Maaa2005（中村さん本人と、中村さんの AI）。どちらの AI も Issue を選んでブランチを切り、PR を出す。
+- このリポジトリは2つの GitHub アカウントから触られている。H4aruki（@H4aruki 本人と、@H4aruki の AI の Miso、その下の Claude Code／Codex）と、Maaa2005（@Maaa2005 本人と、@Maaa2005 の AI）。どちらの AI も Issue を選んでブランチを切り、PR を出す。
 - 看板（GitHub Projects #1、Status／Owner／Phase）は 2026-11-10 早朝に案Dのロードマップとして作られたが、その後ほぼ更新されていなかった。11:07 時点で:
   - 載っていたのは #20〜#52 だけ。Assignees は全部空だった。
   - 閉じた #51・マージ済み PR #52 が Todo のままだった。
   - その後の #58（連載のサーバー）・#59（漫画UI）と PR #53〜#67 は未登録だった。
   - 誰がどの Issue を今触っているかは、看板からは分からなかった（open PR の作成者・ブランチ名の番号・最近のコミットから推測するしかなかった）。
 - 実際、閉じた #58 に作業中の PR #65〜#67 が `Refs` でぶら下がっていて、看板の上では追えなかった（11:18 に #68 を切り直した）。
-- Haruki さん 11:07 JST:「kanban適切に活用してる？メンバーのAIと同じIssueを同時に作業することがないように適切に活用するようにして」
+- @H4aruki の指示（2026-11-10）: 看板を適切に活用し、メンバーの AI と同じ Issue を同時に作業しないようにする。
 - 11:15 頃に Miso が看板を事実に合わせた（閉じたものを Done、未登録の Issue・PR を追加、作業中の PR に Assignee）。そのうえで、今後ずれないためのルール案を出した。
 
 ## 検討した選択肢
@@ -30,7 +30,7 @@
 
 ### 案C: チャット（Discord）で宣言する
 - 利点: 人にはすぐ届く。
-- 欠点: AI が読めない・書けないことがある（[0013](0013-team-sharing.md) で Discord への投稿は Haruki さんの事前承認制）。GitHub の Issue・ブランチと結びつかない。
+- 欠点: AI が読めない・書けないことがある（[0013](0013-team-sharing.md) で Discord への投稿は @H4aruki の事前承認制）。GitHub の Issue・ブランチと結びつかない。
 
 ### 案D: CI やフックで強制する（Assignee が無い Issue 番号のブランチは push 不可など）
 - 利点: 忘れても止まる。
@@ -45,13 +45,13 @@
 4. ブランチと PR は Issue 番号付き。PR も看板に足す。
 5. 終わったら Done、やめたら Assignee を外して Todo／Blocked にし【中断】をコメントする。
 6. 終了見込みを過ぎて続けるなら書き直す。
-7. **In Progress のまま3時間反応がなければ、本人に一声かけてから引き取ってよい**（Haruki さん 11:18）。
+7. **In Progress のまま3時間反応がなければ、本人に一声かけてから引き取ってよい**（@H4aruki の決定、2026-11-10）。
 
 gh のコマンドと看板の欄の ID は AGENTS.md を長くしないよう [docs/14-kanban.md](../14-kanban.md) に分け、AGENTS.md と [MAP.md](../MAP.md) からリンクする。
 
 ## 理由（判断基準）
 
-1. **同時作業を防ぐ**（Haruki さんの問題提起そのもの）: 着手前の確認と宣言が、2アカウントの AI のどちらからも見える場所に残る。
+1. **同時作業を防ぐ**（@H4aruki の問題提起そのもの）: 着手前の確認と宣言が、2アカウントの AI のどちらからも見える場所に残る。
 2. **AI が守れる**: 全部 `gh` で読める・書ける。AGENTS.md は Claude Code・Codex・Grok・Cursor が最初に読む（CLAUDE.md からも誘導）。
 3. **今日中に入れられる**: 文書と既存の看板だけで、コードも CI も変えない。
 4. **引き取りの条件を決めておく**: 宣言だけだと、止まった In Progress が締切まで塞ぐ。3時間＋一声で、黙って奪うことも永遠に待つことも避ける。
@@ -70,8 +70,8 @@ gh のコマンドと看板の欄の ID は AGENTS.md を長くしないよう [
 
 - コード: なし。
 - 運用: 着手のたびに `gh` の呼び出しが3〜4回（数秒ずつ）増える。Issue に【着手】【中断】のコメントが増える。
-- 権限: 中村さん側の `gh` に `project` 権限が無ければ `gh auth refresh -s project,read:org`（ブラウザで人が承認）が要る。H4aruki 側（Miso）は 11/10 時点で `project` 権限あり。
-- 既存の作業: #65〜#67 は #68 に付け替えて In Progress・Assignee H4aruki・【着手】済み。#48・PR #62 は Haruki さん本人の作業として In Progress（Owner human）。
+- 権限: @Maaa2005 側の `gh` に `project` 権限が無ければ `gh auth refresh -s project,read:org`（ブラウザで人が承認）が要る。H4aruki 側（Miso）は 11/10 時点で `project` 権限あり。
+- 既存の作業: #65〜#67 は #68 に付け替えて In Progress・Assignee H4aruki・【着手】済み。#48・PR #62 は @H4aruki 本人の作業として In Progress（Owner human）。
 
 ## リスクと対策
 
@@ -84,12 +84,12 @@ gh のコマンドと看板の欄の ID は AGENTS.md を長くしないよう [
 
 ## 未決事項・見直す条件
 
-- **人（Haruki さん・中村さん本人）が手で作業するときも同じ宣言を求めるか**: 未決（案は「求める、Owner=human」）。
+- **人（@H4aruki・ @Maaa2005 本人）が手で作業するときも同じ宣言を求めるか**: 未決（案は「求める、Owner=human」）。
 - 看板の自動化（閉じたら Done、PR を開いたら In Review 等）を入れるか: 未確認・未決。
 - 同時作業が起きたら、CI・フックでの強制（案D）を見直す。
 
 ## 出典
 
-- Haruki さんの発言（2026-11-10 チャット）: 11:07「kanban適切に活用してる？メンバーのAIと同じIssueを同時に作業することがないように適切に活用するようにして」、11:18「着手ルールはこの案で PR を出す」「反応がない In Progress は、3時間、本人に一声かけてから引き取ってよい」
+- @H4aruki の指示（2026-11-10）: 看板で同時作業を防ぐこと、着手ルールをこの案で PR にすること、反応のない In Progress は3時間後に本人に一声かけて引き取ってよいこと
 - 11:07 時点の看板の状態（Miso が `gh project item-list` で確認）と、11:15 頃の更新内容（試行錯誤ログ 2026-11-10）
 - GitHub CLI `gh project item-add`／`item-edit`／`field-list`（`gh help project`）

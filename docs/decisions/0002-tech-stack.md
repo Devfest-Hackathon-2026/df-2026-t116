@@ -2,7 +2,7 @@
 
 - 状態: 決定
 - 日付: 2026-11-10（コミット 1305f38 04:38 JST、PR #30 を 06:24 JST に main へマージ）
-- 決定者: Haruki さん（案D の設計書 [design-d-4koma.md](../design-d-4koma.md) の採用、前提メモ追記 2026-11-10 04:15）。表の各要素の選定理由は設計書で AI が調べて起案
+- 決定者: @H4aruki（案D の設計書 [design-d-4koma.md](../design-d-4koma.md) の採用、前提メモ追記 2026-11-10 04:15）。表の各要素の選定理由は設計書で AI が調べて起案
 - 関連: #29、#30、#33、[0007](0007-adopt-idea-d.md)、[0010](0010-gcp-billing-guards.md)、[0011](0011-gcp-regions.md)、[0012](0012-generation-limits.md)
 
 ## 背景

@@ -2,11 +2,11 @@
 
 - 状態: 決定
 - 日付: 2026-11-10（12:15 JST）
-- 決定者: Haruki さん（方向性「Apple のアプリっぽく、ガラスリキッドと影の使い方」）。具体的な値と範囲は Miso（Haruki さんの AI）が起案
+- 決定者: @H4aruki（方向性: Apple のアプリのような、リキッドグラスと影の使い方）。具体的な値と範囲は Miso（@H4aruki の AI）が起案
 - 関連: Issue #72、PR（この ADR を足した PR）、#67（設定画の確認と描き直し）、Issue #82（主ボタンの朱色のコントラスト）
 
 ## 背景
-- Haruki さん 11/10 12:13 JST「アプリのデザインも凝りたい。Xに保存とかいいねしてあるskillsとか使って改良して」、12:14 JST「appleのアプリっぽいやつがいいね。ガラスリキッドとか影の使い方とか」。
+- @H4aruki の指示（2026-11-10）: アプリのデザインも作り込む。X で保存・いいねしてあるスキル（AI 向けの手順書）を使って改良する。方向性は Apple のアプリのような、リキッドグラスと影の使い方。
 - 制約: 当日 18:00 JST コード停止、PR は 14:00 JST まで。審査とデモはスマホの可能性がある。漫画（4コマ）の絵が主役。
 - #67 が `globals.css` の末尾と `ThemeClient.tsx`・`NewThemeForm.tsx` を触っていて、今日入る予定。
 
@@ -39,7 +39,7 @@
 | SVG 屈折（案C） | Safari で効かず判定もできない。重い |
 | ダークモード | 依頼の範囲外。締切まで時間がない |
 | Web フォント（SF Pro 等）の読み込み | SF Pro は Apple 端末の外で使えない。system-ui で Apple 端末では SF/ヒラギノになる |
-| MotionSites スキル（Haruki さんのブクマ） | 中身が動画だけで、入手条件（有料か）を確認できなかった |
+| MotionSites スキル（@H4aruki のブクマ） | 中身が動画だけで、入手条件（有料か）を確認できなかった |
 
 ## 影響
 - コード: `globals.css` の値の変更とトークンの追加。クラス名は変えていない。`.glass` は共通の部品として追加したが、使われていなかったため削除した。
@@ -56,21 +56,20 @@
 | 主ボタンの白文字（朱色の上）のコントラスト | 以前の記述「3.45:1・太字 16px」は誤り。実際は 15px・font-weight 600・白 18% のグラデーション付きで、塗り 3.45:1、上端 `#f47353` で 2.83:1 だった。#82 で `--accent` を `#c43c18` にし、グラデーションを白 6% に弱めた。いまは塗り 5.24:1、上端 `#c84826` で 4.76:1（AA 4.5:1 以上）。測定: WCAG 2 の相対輝度 |
 
 ## 追加の決定（#82 主ボタンの朱色）
-- 決定者: Haruki さん。日付: 2026-11-10 14:58 JST。
+- 決定者: @H4aruki。日付: 2026-11-10 14:58 JST。
 - 検討した案: A 朱色を少し濃くする（`#c43c18`）／B 朱色はそのまま、ボタンの文字を太く大きくしグラデーションの白を外す／C 今のまま。
 - 採用: A。`--accent` を `#c43c18` にし、`.btn` のグラデーションを白 18% から 6% に弱め、影の色も `rgba(196, 60, 24, 0.28)` に合わせた。
-- 採らなかった理由: B は見た目はほぼ今のままだが、通常サイズの文字では 4.5:1 に届かない（Haruki さんが A を選んだ）。C は上端 約 2.83:1、塗り 3.45:1 のままで AA 未達。
+- 採らなかった理由: B は見た目はほぼ今のままだが、通常サイズの文字では 4.5:1 に届かない（@H4aruki が A を選んだ）。C は上端 約 2.83:1、塗り 3.45:1 のままで AA 未達。
 - 影響: 朱色の塗り・枠・outline・一部の文字（いいねの丸ボタンなど）が少し濃くなる。`--accent-soft` との比は 4.54:1。
 
 ## 未決事項・見直す条件
 - 実機（iPhone Safari）での見え方は未確認。デモ前に一度見る。
 
 ## 出典
-- Haruki さんの依頼 11/10 12:13・12:14 JST。調査メモ（box）/workspace/design-work/research.md
+- @H4aruki の依頼（2026-11-10）。調査メモ（AI エージェントの作業環境、リポには入れない）
 - WWDC25 Meet Liquid Glass https://developer.apple.com/videos/play/wwdc2025/219/
 - HIG Materials https://developer.apple.com/design/human-interface-guidelines/materials
 - WWDC25 Design Group Lab まとめ https://developer.apple.com/forums/topics/design-topic
 - フォールバックと読みやすさ https://github.com/TurtIeSocks/agent-skills/blob/main/liquid-glass-css/references/fallbacks-a11y.md 、 https://rohullah.me/blog/glassmorphism-done-right
 - SVG 屈折の対応状況 https://qodesign.dev/blog/liquid-glass-react-tailwind-browser-support
 - prefers-reduced-transparency https://developer.chrome.com/blog/css-prefers-reduced-transparency
-- Haruki さんの X ブックマーク: https://x.com/i/status/2113085361836744764 （説明文を足さずレイアウトで伝える）、 https://x.com/i/status/2094091484320657619 （DESIGN.md）

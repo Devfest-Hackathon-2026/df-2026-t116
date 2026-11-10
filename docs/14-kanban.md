@@ -2,7 +2,7 @@
 
 ルールの本体は [AGENTS.md](../AGENTS.md)「着手の前に看板を見る」、決定の経緯は [0015](decisions/0015-kanban-claim-rule.md)。ここには `gh` で動かすためのコマンドと固定値だけを置く。
 
-- 看板: <https://github.com/orgs/akamiso-rangers/projects/1>（DevFest 2026 t116 Roadmap (案D)、プロジェクト番号 1）
+- 看板: 開発用 Organization の GitHub Projects（DevFest 2026 t116 Roadmap (案D)、プロジェクト番号 1）
 - 欄: Status（Todo／In Progress／Blocked(人待ち)／In Review／Done）・Owner（ai／human）・Phase（P0〜P6）・Assignees
 
 ## 0. 準備（1回だけ）
@@ -53,7 +53,7 @@ gh project item-edit --project-id $PROJECT_ID --id $ITEM --field-id $OWNER_FIELD
 ## 3. 着手を宣言する
 
 ```sh
-gh issue comment $N -R $REPO --body "【着手】中村さんの Claude Code／ブランチ feat/$N-xxx／終了見込み 14:00 JST"
+gh issue comment $N -R $REPO --body "【着手】 @Maaa2005 の Claude Code／ブランチ feat/$N-xxx／終了見込み 14:00 JST"
 ```
 
 ## 4. PR を看板に足す

@@ -1,6 +1,6 @@
 # 判断記録（ADR）
 
-後から「なぜそうしたか」「何を捨てたか」を追えるように、決めたことを**なるべく詳しく**残す（2026-11-10 Haruki さんのルール。[AGENTS.md](../../AGENTS.md) の「意思決定の記録」）。
+後から「なぜそうしたか」「何を捨てたか」を追えるように、決めたことを**なるべく詳しく**残す（2026-11-10 @H4aruki のルール。[AGENTS.md](../../AGENTS.md) の「意思決定の記録」）。
 
 - ファイル名: `NNNN-短い名前.md`（例: `0001-submission-transfer.md`）
 - 決定を含む PR は、ADR を追加・更新し、**PR 本文にも要約と理由**を書く（ADR だけ・PR だけにしない）。
@@ -78,7 +78,7 @@ Issue フォーム `decision` との対応:
 | [0011](0011-gcp-regions.md) | リージョン | データ NE1、App Hosting east1 |
 | [0012](0012-generation-limits.md) | 打ち切りと回数 | 120秒、1人10・全体120 |
 | [0013](0013-team-sharing.md) | チーム共有 | GitHub基本、秘密はDiscordテキスト |
-| [0014](0014-dev-workflow.md) | 開発の進め方 | Haruki→Miso→Claude/Codex→PR |
+| [0014](0014-dev-workflow.md) | 開発の進め方 | @H4aruki→Miso→Claude/Codex→PR |
 | [0015](0015-kanban-claim-rule.md) | 看板での着手の宣言 | 確認→Assignee＋In Progress→【着手】、3時間＋一声で引き取り |
 | [0016](0016-liquid-glass-ui.md) | 見た目（Liquid Glass 風） | ガラスはナビ層だけ、カードは白＋多層の影 |
 | [0017](0017-readme-for-judges.md) | README を審査員向けに | 審査項目の順の節、主張ごとにコード・ADR、仮の画像を作らない |

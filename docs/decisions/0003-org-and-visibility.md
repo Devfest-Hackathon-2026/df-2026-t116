@@ -2,14 +2,14 @@
 
 - 状態: 決定
 - 日付: 2026-11-05（移管 13:30 JST ごろ、非公開維持の決定は前提メモ追記 15:41）
-- 決定者: Haruki さん（Org 作成・非公開の選択・Maaa2005 の招待）。移管作業は Miso
+- 決定者: @H4aruki（Org 作成・非公開の選択・Maaa2005 の招待）。移管作業は Miso
 - 関連: #3、PR #4（2026-11-05 16:15 JST マージ）、[0004](0004-main-guardrails.md)
 
 ## 背景
 
 - 開発用リポジトリは最初、個人アカウント H4aruki の非公開リポジトリとして作った（2026-11-05 13:18 JST、Maaa2005 は write で招待）。
 - チームメイト Maaa2005 に admin を付けようとすると GitHub が 422 を返した（"You can only give write access to user-owned repositories"）。個人所有のリポジトリでは協力者は write までしか持てない。
-- Haruki さんは「対等な権限」を必要とした。
+- @H4aruki は「対等な権限」を必要とした。
 - 制約: 有料プラン（GitHub Pro / Team）には費用をかけない。締切前に作業中の内容を外に見せたくない。
 
 ## 検討した選択肢
@@ -32,9 +32,9 @@
 
 ## 決定
 
-- 無料 Organization <https://github.com/akamiso-rangers> に移す（Haruki さんが Org を作成）。
-- リポジトリ <https://github.com/akamiso-rangers/devfest-2026-t116> は非公開のまま。
-- Maaa2005 は Haruki さんが Web から Org Owner として招待する（gh のトークンに `admin:org` が無いため）。招待は 2026-11-05 18:03 JST 時点で完了。
+- 無料 Organization akamiso-rangers に移す（@H4aruki が Org を作成）。
+- リポジトリ akamiso-rangers/devfest-2026-t116 は非公開のまま。
+- Maaa2005 は @H4aruki が Web から Org Owner として招待する（gh のトークンに `admin:org` が無いため）。招待は 2026-11-05 18:03 JST 時点で完了。
 
 ## 理由（判断基準）
 
@@ -67,7 +67,7 @@
 
 ## 未決事項・見直す条件
 
-- Actions の分数が足りなくなったら、公開化か CI の削減を Haruki さんが判断する。
+- Actions の分数が足りなくなったら、公開化か CI の削減を @H4aruki が判断する。
 - 提出後（締切後）の開発用リポジトリの扱い: 未決。
 
 ## 出典

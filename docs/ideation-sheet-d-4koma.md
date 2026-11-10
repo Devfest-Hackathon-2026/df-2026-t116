@@ -1,6 +1,6 @@
 # アイデアシート：お題に続きを付け合う4コマ（仮）
 
-> [ideation-sheet-template.md](ideation-sheet-template.md) の形で書いた（11/9 中村＋AI 下書き）。
+> [ideation-sheet-template.md](ideation-sheet-template.md) の形で書いた（11/9 @Maaa2005＋AI 下書き）。
 > 【チームで】の欄はチームが決める所。それ以外は AI の案なので、違えば直してください。
 
 ## 0. 私たちの目的

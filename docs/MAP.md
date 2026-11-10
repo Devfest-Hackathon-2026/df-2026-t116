@@ -20,7 +20,7 @@
 | [案D 設計書](design-d-4koma.md) | 案D（採用）を実装するとき | 生成・上限・作業順。**開始フロー・キャラは serial が正** | 長い |
 | [案D 設計書（2）連載の形](design-d-serial.md) | 連載・スワイプ・漫画UI・作品の始め方 | 決めた事・画面・入口。**始め方はここが正（4komaより優先）** | 中 |
 | [14 看板の使い方](14-kanban.md) | Issue に着手する前・終えたとき | 着手の宣言と Done の gh コマンド、看板の欄の ID（固定値） | 中 |
-| [案D ロードマップ（看板）](https://github.com/orgs/akamiso-rangers/projects/1) | 実装の進捗を見るとき | GitHub Projects 看板（Status / Owner / Phase）。人間専用は #31→#50。Issue 一覧は label:roadmap でも可 | 短い |
+| 案D ロードマップ（看板、開発用リポジトリ側・非公開） | 実装の進捗を見るとき | GitHub Projects 看板（Status / Owner / Phase）。人間専用は #31→#50。Issue 一覧は label:roadmap でも可 | 短い |
 | [decisions/README.md](decisions/README.md) | 判断記録（ADR）を書く・読むとき | ADR の書き方（なるべく詳しく、PR 本文にも書く）とテンプレート（背景・選択肢・決定・理由・却下案・影響・リスク・未決・出典）と一覧 | 中 |
 | [0001 提出用リポジトリへの移し方](decisions/0001-submission-transfer.md) | 提出直前 | 最終版だけを履歴なしで提出用リポジトリへ移す決定 | 長い |
 | [0002 技術スタック](decisions/0002-tech-stack.md) | アイデア決定後 | Next.js + Firebase App Hosting + Firestore + Vertex AI（ADC）に決めた理由と却下案 | 長い |
@@ -35,7 +35,7 @@
 | [0011 リージョン](decisions/0011-gcp-regions.md) | Firebase/GCP リージョンを触るとき | データ asia-northeast1、App Hosting asia-east1 | 長い |
 | [0012 生成の打ち切りと回数](decisions/0012-generation-limits.md) | タイムアウトや回数を変えるとき | 120秒、1人10・全体120 | 長い |
 | [0013 チーム共有ルール](decisions/0013-team-sharing.md) | Discord や docs 共有するとき | GitHub基本、秘密だけDiscordテキスト、投稿前確認 | 長い |
-| [0014 開発の進め方](decisions/0014-dev-workflow.md) | 誰が何をするか確認するとき | Haruki→Miso→Claude/Codex→PR | 長い |
+| [0014 開発の進め方](decisions/0014-dev-workflow.md) | 誰が何をするか確認するとき | @H4aruki→Miso→Claude/Codex→PR | 長い |
 | [0015 看板での着手の宣言](decisions/0015-kanban-claim-rule.md) | Issue に着手する前 | 着手前に看板を確認・Assignee＋In Progress・【着手】コメント・3時間＋一声で引き取り | 長い |
 | [0016 見た目（Liquid Glass 風）](decisions/0016-liquid-glass-ui.md) | 画面の色・影・ガラスを触るとき | ガラスはナビ層だけ、カードは白＋多層の影 | 長い |
 | [0017 README を審査員向けに](decisions/0017-readme-for-judges.md) | README を直すとき | 審査項目の順の節、主張ごとにコード・ADR、仮の画像を作らない | 中 |
@@ -46,7 +46,7 @@
 - **アイデア出し中** → [ideation-checklist](ideation-checklist.md) と [ideation-sheet-template](ideation-sheet-template.md) だけ
 - **アイデア決定直後** → [00-start-here](00-start-here.md) だけ、次に [decisions/0002](decisions/0002-tech-stack.md)
 - **実装・PR** → [AGENTS.md](../AGENTS.md) + [14 看板](14-kanban.md) + [09](09-コミットとブランチの規約.md) + [10](10-CIとフックの仕組み.md)
-- **案D実装の進捗** → [看板](https://github.com/orgs/akamiso-rangers/projects/1)（Status列）＋ [roadmap Issues](https://github.com/akamiso-rangers/devfest-2026-t116/issues?q=is%3Aissue+label%3Aroadmap)（先に人間専用 #31）
+- **案D実装の進捗** → 看板（Status列）＋ roadmap Issues（開発用リポジトリ側・非公開）（先に人間専用 #31）
 - **デプロイ** → [11](11-gcp-deploy.md) + [12](12-secrets.md)
 - **提出直前** → [13](13-demo-and-submission.md) + [decisions/0001](decisions/0001-submission-transfer.md)
 - **方針を知る** → [decisions/README](decisions/README.md) + 関係する ADR（製品は 0007–0009、開始は 0005、費用は 0006/0010/0012）
