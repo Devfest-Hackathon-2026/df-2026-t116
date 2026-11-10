@@ -1,0 +1,109 @@
+name: 実装タスク
+description: 実装 1 つ分の Issue。何を・なぜ・どこまでを先に決めてから手を動かす
+title: "[task] "
+labels: ["task"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        1 Issue = 1 PR で閉じる大きさにする。スマホで上から読めば状況が分かる順に並べてある。
+        使わない欄は「なし」と書く（空欄は「検討していない」と同じ意味になる）。
+  - type: input
+    id: summary
+    attributes:
+      label: 一行で何をするか
+      description: 動詞で終わる 1 文。「〜を実装する」「〜を直す」
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: なぜ（根拠）
+      description: 誰が・どんな場面で困っているか・どう知ったか（URL か日付つき）。3 行以内
+      value: |
+        - 誰が:
+        - 困りごと:
+        - 根拠:
+    validations:
+      required: true
+  - type: checkboxes
+    id: criteria
+    attributes:
+      label: 効く審査の軸
+      description: 複数可。どれにも効かないなら「なし」を選び、今やる理由を下の欄に書く
+      options:
+        - label: 1-a Google 技術がプロダクトの核として機能している
+        - label: 1-b Google 技術を採用した理由を説明できる
+        - label: 2-a 課題解決に必要な操作が一連の流れとして動く
+        - label: 2-b 対象ユーザーが目的を達成できる UI/UX になっている
+        - label: 2-c 安全性・拡張性・保守性を見据えた設計になっている
+        - label: 3-a 解決する課題が具体的かつ明確に示せている
+        - label: 3-b 機能や仕組みが、実際の課題解決に有効である
+        - label: 4-a デモ・話の構成が分かりやすく、インパクトがある
+        - label: なし
+  - type: input
+    id: criteria-reason
+    attributes:
+      label: 効く理由（1 行）
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: 今の画面（スクショ）
+      description: |
+        着手前の状態の画像をここにドラッグ&ドロップする。リポジトリに画像をコミットしない。
+        鍵・トークン・個人情報が写っていないか確認する。新規画面なら「新規のため無し」、UI に関係しないなら「UI 変更なし（理由: ）」と書く。空欄にしない
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: 完了条件
+      description: 外から確かめられる形で 2〜4 個。「どの画面で、何をすると、何が起きるか」と確認方法
+      value: |
+        - [ ]
+        - [ ]
+
+        確認方法:
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 検討した案と、採らなかった理由
+      description: 案は消さずに残す。1 案 1 行。案が 1 つしか出なかったときも、なぜ他が出なかったかを書く
+      value: |
+        | 案 | 採らなかった理由 |
+        |---|---|
+        |  |  |
+
+        選んだ理由（判断の基準を 1 行）:
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: 触るファイル / やらないこと
+      value: |
+        - 主:
+        - テスト:
+        - やらないこと:
+        - やらないと決めた理由:
+  - type: textarea
+    id: estimate
+    attributes:
+      label: 見積・担当・期限
+      description: 1 日 6 時間で数え、予備（3 割）を入れる。合計が 6 時間を超えるなら Issue を分ける
+      value: |
+        - 見積（実装 / 確認 / 予備 / 合計）:
+        - 実装:
+        - レビュー:
+        - 期限: 2026-11-xx xx:xx（JST）
+  - type: textarea
+    id: glossary
+    attributes:
+      label: 用語集（専門用語の説明）
+      description: 本文に出た専門用語を 1 行ずつ。無ければ「なし」
+      value: |
+        - 用語: 説明
+    validations:
+      required: true

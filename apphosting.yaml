@@ -1,0 +1,21 @@
+# Firebase App Hosting の設定（docs/design-d-4koma.md 7節・docs/11）
+runConfig:
+  maxInstances: 3
+  minInstances: 0
+
+# availability を省くとビルド時と実行時の両方に入る。
+# 秘密の値はここに書かない（現状、必須のサーバー秘密は無い。Vertex/Firestore/Storage は ADC）。
+# 画面の Firebase 設定は App Hosting がビルド時に FIREBASE_WEBAPP_CONFIG として自動で入れるので書かない。
+env:
+  - variable: DATA_BACKEND
+    value: firestore
+  - variable: GENERATOR
+    value: vertex
+  - variable: GEN_TIMEOUT_SEC
+    value: "120"
+  - variable: LIMIT_PER_USER
+    value: "10"
+  - variable: LIMIT_GLOBAL
+    value: "120"
+  - variable: GOOGLE_CLOUD_LOCATION
+    value: global

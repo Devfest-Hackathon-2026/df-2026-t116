@@ -1,0 +1,54 @@
+name: バグ報告
+description: 動かない・期待と違う、を再現できる形で残す
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: input
+    id: summary
+    attributes:
+      label: 一行で何が起きているか
+      description: 例「症状を送信しても候補が出ない」
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 再現手順
+      description: コードを開かずにたどれる手順で。環境（ローカル / デプロイ URL、端末、ブラウザ幅）も書く
+      value: |
+        1.
+        2.
+        3.
+
+        環境:
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期待する動き
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 実際の動き
+      description: エラー文があれば全文。秘密情報は伏せる
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: スクショ
+      description: ドラッグ&ドロップで貼る。コミットしない。鍵・トークン・個人情報が写っていないか確認する。画面が無い不具合は「なし（理由: ）」
+    validations:
+      required: true
+  - type: textarea
+    id: glossary
+    attributes:
+      label: 用語集（専門用語の説明）
+      description: 本文に出た専門用語を 1 行ずつ。無ければ「なし」
+      value: |
+        - 用語: 説明
+    validations:
+      required: true
