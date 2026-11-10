@@ -14,7 +14,7 @@ DevFest GDGoC Japan Hackathon 2026 ／ チーム 赤味噌レンジャー（[@H4
 
 <!-- 下の3枚は開発用の生成器（GENERATOR=fake。画像 AI を呼ばない）で撮った画面。
      本番で Vertex AI が描いたページを撮れたら、docs/assets/ に置いて差し替える -->
-<img src="docs/screenshots/59/1-home.jpg" width="240" alt="ホーム画面。いま一番動いている作品の看板、評価待ちの枚数、連載中の作品の棚が並ぶ">
+<img src="docs/screenshots/59/1-home.jpg" width="240" alt="ホーム画面。いま一番動いている作品の1ページを表紙として大きく見せ、下に評価待ちの枚数が並ぶ">
 <img src="docs/screenshots/59/2-swipe.jpg" width="240" alt="評価する画面。候補のページをカードで重ね、右でいいね、左でいまいちを付ける">
 <img src="docs/screenshots/59/5-reader.jpg" width="240" alt="読む画面。決まったページを縦に並べ、各ページの下に人が書いた4コマのセリフを出す">
 
@@ -117,7 +117,7 @@ AI がセリフを書き換えないことは、プロンプトの注意書き�
 <summary>ほかの画面（開発用の生成器で撮影）</summary>
 
 <!-- 本番の絵で撮れたら差し替える -->
-<img src="docs/screenshots/59/7-new.jpg" width="240" alt="作品を始める画面。物語の軸、絵柄、キャラを選ぶ">
+<img src="docs/screenshots/59/7-new.jpg" width="240" alt="作品を始める画面。物語の軸、絵柄、キャラを3ステップで選ぶ">
 <img src="docs/screenshots/59/4-work.jpg" width="240" alt="作品のページ。物語の軸、いま募集中のページ、話の一覧">
 <img src="docs/screenshots/59/3-reason.jpg" width="240" alt="いいねの後に出る理由の札">
 <img src="docs/screenshots/59/6-episode-end.jpg" width="240" alt="1話の終わりの画面">
