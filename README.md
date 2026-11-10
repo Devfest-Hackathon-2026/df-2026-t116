@@ -4,7 +4,7 @@
 
 **話は人が書き、絵は AI が描く。みんなで1ページずつ続ける連載漫画の Web アプリ。**
 
-[本番で開く](https://devfest-4koma--project-bd07690e-65d2-4420-910.asia-east1.hosted.app) ・ [構成](#仕組みとアーキテクチャ)
+本番 URL → https://devfest-4koma--project-bd07690e-65d2-4420-910.asia-east1.hosted.app
 
 DevFest GDGoC Japan Hackathon 2026 ／ チーム 赤味噌レンジャー（[@H4aruki](https://github.com/H4aruki)・[@Maaa2005](https://github.com/Maaa2005)）
 
